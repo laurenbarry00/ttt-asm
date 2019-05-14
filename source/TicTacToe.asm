@@ -42,7 +42,7 @@ printBoard     PROTO
 chooseSquare   PROTO
 checkWinner    PROTO
 processWinner  PROTO
-processTie    PROTO
+processTie     PROTO
 switchPlayer   PROTO
 printOutro     PROTO
 
@@ -477,7 +477,7 @@ CheckTie:
      je NoWinnerFound
      cmp [esi + 254],bl
      je NoWinnerFound
-     jmp CatsFound
+     jmp TieFound
 
 NoWinnerFound:
      mov edx,0
@@ -489,7 +489,7 @@ WinnerFound:
      mov [edi],edx
      jmp Finish
 
-CatsFound:
+TieFound:
      mov edx,2
      mov [edi],edx
      jmp Finish
